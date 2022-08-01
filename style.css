@@ -1,0 +1,118 @@
+:root {
+  --background: hsl(233, 47%, 7%);
+  --card-bg: hsl(244, 38%, 16%);
+  --accent: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --main-text: hsl(0, 0%, 100%, 0.75);
+  --stat-heading: hsla(0, 0%, 100%, 0.16);
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--white);
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  display: flex;
+  border-radius: 8px;
+}
+
+.card .card-text {
+  width: 50%;
+  padding: 5rem;
+}
+
+.card .card-text h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.card .card-text .accent {
+  color: var(--accent);
+}
+
+.card .card-text .main-text {
+  color: var(--main-text);
+  font-weight: 400;
+  line-height: 1.6rem;
+  margin-bottom: 5rem;
+}
+
+.card .card-text .stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card .card-text .stats .stat-item h2 {
+  font-weight: 700;
+  margin-bottom: 0.625rem;
+}
+
+.card .card-text .stats .stat-item .stat-title {
+  color: var(--stat-heading);
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.card .card-img {
+  border-radius: 0 8px 8px 0;
+  width: 55%;
+  background: linear-gradient(0deg, hsla(277, 100%, 10%, 0.75) 0%, hsla(277, 50%, 50%, 0.75) 100%),
+    url(images/image-header-desktop.jpg) center no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 575px) {
+  .card {
+    flex-direction: column-reverse;
+  }
+
+  .card .card-text {
+    text-align: center;
+    margin: 0;
+    width: 100%;
+  }
+
+  .card .card-text .main-text {
+    margin-bottom: 2rem;
+  }
+
+  .card .card-text .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .card .card-img {
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(0deg, hsla(277, 64%, 61%, 0.5) 0%, hsla(277, 64%, 61%, 0.5) 100%),
+      url(images/image-header-mobile.jpg) center no-repeat;
+    background-size: cover;
+  }
+}
